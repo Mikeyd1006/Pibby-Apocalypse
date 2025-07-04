@@ -1,0 +1,17 @@
+    os: macos-15
+            buildArgs: "ios -nosign"
+            exportPath: ios
+            cacheLibrariesPath: Pibby-Apocalypse.1.0.mobile-cache
+            artifactName: Pibby Apocalypse 0.5.1
+            artifactPath: "export/release/ios/build/Release-iphoneos/*.ipa"
+            cachePath: Pibby Apocalypse
+    uses: ./.github/workflows/build.yml
+    with:
+      name: ${{ matrix.name }}
+      os: ${{ matrix.os }}
+      buildArgs: ${{ matrix.buildArgs }}
+      exportPath: ${{ matrix.exportPath }}
+      artifactName: ${{ matrix.artifactName }}
+      cacheLibrariesPath: ${{ matrix.cacheLibrariesPath }}
+      artifactPath: ${{ matrix.artifactPath }}
+      cachePath: ${{matrix.cachePath}}
